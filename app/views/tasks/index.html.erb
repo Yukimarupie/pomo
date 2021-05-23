@@ -41,6 +41,18 @@
         start
       </button>
     </div>
+
+    <section class="task">
+    <h1>ここからタスクの登録ができるようにします↓</h1>
+      <% form_with(model: @task, class: 'youCanAddTasks', local: false) do |f| %>
+        <%= f.text_field :body %>
+        <%= f.submit %>
+      <% end %>
+
+      <ul class="tasks">
+        <%= render @tasks %><%# _task.html.erbを呼び出す %>
+      </ul> 
+    </section>
   </main>
   <div class="hidden">
     <audio src="/mp3/notice_sound.mp3" data-sound="pomodoro"></audio>
