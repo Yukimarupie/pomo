@@ -7,11 +7,10 @@ class TasksController < ApplicationController
   def create
     task = Task.new(task_params)
     task.save!
-
   end
 
   def new
-    @task = Task.new
+    # @task = Task.new
   end
 
   def destory
