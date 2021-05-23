@@ -12,8 +12,8 @@ let interval;
 console.log("ここはclickイベントの上です" + timer.sessions);
 
 // let { 変数 } = hogehoge みたいになってるのは、hogehogeに入る値が配列の分割構文が代入されるから。
-const btnStartSound = new Audio('public/mp3/kiran.mp3');
-const pomoSound = new Audio('public/mp3/bg_sounds.mp3');
+const btnStartSound = new Audio('/mp3/kiran.mp3');
+const pomoSound = new Audio('/mp3/bg_sounds.mp3');
 const mainButton = document.getElementById('js-btn');
 mainButton.addEventListener('click', () => {
 
