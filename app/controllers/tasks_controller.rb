@@ -5,8 +5,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.new(task_params)
-    task.save!
+    @task = Task.new(task_params)
+    respond_to do |format|
+      if @task.save!
+        format.js #create.js.erbが呼び出される
+      end
+    end
   end
 
   def new
@@ -20,6 +24,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    # params.require(:task).permit(:name)
+    params.require(:task).permit(:name)
   end
 end
