@@ -2,15 +2,22 @@ console.log('<%= @task.name %>');
 
 const domForm = document.querySelector('js-forms');
 domForm.addEventListener('ajax:success', (event) => {
-  console.log(event);
-  
+  console.log(event)
+
   # タスクをAjaxで一番上に追加する
-  const domTasks = document.querySelector('.js-task__list');
-  domTasks.prepend("<li class='tasks__list-task'><%= @task.name %></li>");
+  const domTasks    = document.querySelector('.js-task__list');
+  const domElemLi = document.createElement('li');
+  domElemLi.innerHtml = "<%= @task.name %>";
+  domTasks.insertBefore(domElemLi, domTasks.firstChild);
+
+  const domTasks = document.querySelector('.js-task__list')
+  domTasks.prepend("<li class='tasks__list-task_create'><%= @task.name %></li>")
 
 # formを入力した後Ajaxが成功したらフォームのinputに残った表示済のタスクを削除する
   document.domForm.reset();
 };
+
+
 
 
 
