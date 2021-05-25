@@ -1,8 +1,8 @@
 console.log('<%= @task.name %>');
 
-# タスクをAjaxで追加する
+# タスクをAjaxで一番上に追加する
 const domTasks = document.querySelector('.js-task__list');
-domTasks.append("<li class='tasks__list-task'><%= @task.name %></li>");
+domTasks.prepend("<li class='tasks__list-task'><%= @task.name %></li>");
 
 # formを入力した後Ajaxが成功したらフォームのinputに残った表示済のタスクを削除する
 const domForm = document.getElementById('js-forms');
