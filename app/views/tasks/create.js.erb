@@ -1,5 +1,14 @@
-const domElem = document.querySelector('tasks');
-domElem.prepend('<li class='task'><%= @task.name %></li>');
+console.log('<%= @task.name %>');
 
-; $('.tasks').prepend('');
-; $('.js-form')[0].reset();
+# タスクをAjaxで追加する
+const domTasks = document.querySelector('.js-task__list');
+domTasks.append("<li class='tasks__list-task'><%= @task.name %></li>");
+
+# formを入力した後Ajaxが成功したらフォームのinputに残った表示済のタスクを削除する
+const domForm = document.getElementById('js-forms');
+domForm.addEventListener('ajax:success', (event) => {
+  document.domForm.reset();
+};
+
+
+

@@ -48,16 +48,15 @@
     <audio src="/mp3/break_sounds.mp3" data-sound="longBreak"></audio>
   </div>
 
-  <section class="task">
+  <section id="task">
     <h1>ここからタスクの登録ができるようにします↓</h1>
     <%= form_with model: @task, class: 'js-forms', local: false do |f| %>
       <%= f.text_field :name, placeholder: 'Click & Add task' %>
       <%= f.submit %>
     <% end %>
-
-    <ul class="tasks">
-      <%#= render @tasks %><%# _task.html.erbを呼び出す %>
-      <li><%= @task.name  %></li>
+    ここにタスク一覧が表示されます↓
+    <ul class="task__list js-task__list">
+      <%= render @tasks %> <%# _task.html.erbを呼び出す %>
     </ul>
   </section>
   <%= javascript_pack_tag 'main' %>
