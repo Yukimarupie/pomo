@@ -1,1 +1,6 @@
-<li class="tasks__list-task"><%= task.name  %></li>
+<li class="tasks__list-task" id="task-<%= task.id %>">
+  <%= task.name  %>
+  <%= link_to '削除', task_path(task),
+              method: :delete,
+              data: { confirm: '削除しますか?', remote: true } %>
+</li>

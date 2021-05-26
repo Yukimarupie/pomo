@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:destroy]
+
   def index
     @tasks = Task.all
     @task = Task.new #remote: trueのために追加
@@ -21,14 +23,20 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def destory
-
+  def destroy
+    @task.destroy!
   end
+
+  def is_done; end
 
   private
 
   def task_params
     params.require(:task).permit(:name)
+  end
+
+  def set_task
+    @task = Task.find(params[:id])
   end
 end
 

@@ -48,4 +48,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'i18n', '~> 1.8', '>= 1.8.10'
+gem 'pry-byebug', '~> 3.9'
+
 
