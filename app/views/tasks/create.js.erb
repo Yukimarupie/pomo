@@ -1,0 +1,9 @@
+// タスクを追加する
+document.querySelector('.js-task__list').insertAdjacentHTML('afterbegin', '<%= j(render @task) %>')
+// フォームの文字を空にする
+document.getElementById('task_name').value = ''
+
+
+
+
+
