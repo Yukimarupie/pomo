@@ -16,8 +16,18 @@
 </head>
 
 <body>
-<h1>Task#indexのページ</h1>
-ここで全てが完結できるようにします。
+
+  <header>
+    <a href="#">
+      <img src="/assets/images/svg/login_icon.svg" alt="ログインアイコン">
+      <span>signup/login</span>
+    </a>
+    <nav id="nav-list">
+      <ul>
+          <li><a href="#fv">Googleでサインインする</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="app">
     <div class="timer">
@@ -47,6 +57,17 @@
     <audio src="/mp3/break_sounds.mp3" data-sound="shortBreak"></audio>
     <audio src="/mp3/break_sounds.mp3" data-sound="longBreak"></audio>
   </div>
+
+  <section id="task">
+    <%= form_with model: @task, class: 'js-forms', local: false do |f| %>
+      <%= f.text_field :name, placeholder: 'Click & Add task' %>
+      <%= f.submit %>
+    <% end %>
+    ここにタスク一覧が表示されます↓
+    <ul class="task__list js-task__list">
+      <%= render @tasks %> <%# _task.html.erbを呼び出す %>
+    </ul>
+  </section>
   <%= javascript_pack_tag 'main' %>
 </body>
 
