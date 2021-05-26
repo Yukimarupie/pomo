@@ -8,7 +8,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     respond_to do |format|
       if @task.save!
-        format.json {render :json => @task } #サーバー側の処理
+        format.json { render :json => @task } #サーバー側の処理
         format.js #create.js.erbが呼び出される。 フロント側の処理。
       else
         format.json { render :new }
