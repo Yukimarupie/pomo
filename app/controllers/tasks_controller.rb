@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:destroy, :edit, :update]
+  before_action :set_task, only: [:destroy, :edit, :update, :done]
 
   def index
     @tasks = Task.all
@@ -40,7 +40,13 @@ class TasksController < ApplicationController
     @task.destroy!
   end
 
-  def is_done; end
+  def done
+    @task.update(:done, true)
+  end
+
+  def not_done
+    @task.update(:done, false)
+  end
 
   private
 

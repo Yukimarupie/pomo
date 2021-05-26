@@ -1,4 +1,5 @@
 <li class="tasks__list-task" id="task-<%= task.id %>">
+  <%= check_box_tag '', '', task.done, {'data-id' => task.id} %>
   <%= task.name  %>
   <%= link_to task_path(task),
               method: :delete,
