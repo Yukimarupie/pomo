@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:destroy]
+  before_action :set_task, only: [:destroy, :edit, :update]
 
   def index
     @tasks = Task.all
@@ -19,8 +19,21 @@ class TasksController < ApplicationController
     end
   end
 
-  def new
-    @task = Task.new
+  def new; end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @task.update!(task_params)
+        format.json { render :json => @task } #サーバー側の処理
+        format.js #create.js.erbが呼び出される。 フロント側の処理。
+      else
+        format.json { render :new }
+        format.js { render :errors }
+      end
+    end
   end
 
   def destroy

@@ -49,5 +49,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'i18n', '~> 1.8', '>= 1.8.10'
 gem 'pry-byebug', '~> 3.9'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 
 

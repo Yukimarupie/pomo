@@ -1,6 +1,8 @@
 <li class="tasks__list-task" id="task-<%= task.id %>">
   <%= task.name  %>
-  <%= link_to '削除', task_path(task),
+  <%= link_to task_path(task),
               method: :delete,
-              data: { confirm: '削除しますか?', remote: true } %>
+              data: { confirm: '削除しますか?', remote: true } do %>
+    <i class="far fa-trash-alt"  aria-hidden="true"></i>
+  <% end  %>            
 </li>
