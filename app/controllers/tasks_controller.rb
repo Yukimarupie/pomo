@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:destroy, :edit, :update, :done]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.reverse
     @task = Task.new #remote: trueのために追加
   end
 
@@ -44,14 +44,10 @@ class TasksController < ApplicationController
     @task.update(:done, true)
   end
 
-  def not_done
-    @task.update(:done, false)
-  end
-
   private
 
   def task_params
-    params.require(:task).permit(:name)
+    params.require(:task).permit(:name, :done)
   end
 
   def set_task
