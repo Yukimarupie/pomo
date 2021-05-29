@@ -34,5 +34,9 @@ module Pomo
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    #タイムゾーンを日本時間に設定
+    config.time_zone = "Tokyo"
+    config.active_record.default_timezone = :local
   end
 end
