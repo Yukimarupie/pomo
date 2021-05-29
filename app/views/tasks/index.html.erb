@@ -53,9 +53,9 @@
     </div>
   </main>
   <div class="hidden">
-    <audio src="/mp3/notice_sound.mp3" data-sound="pomodoro"></audio>
-    <audio src="/mp3/break_sounds.mp3" data-sound="shortBreak"></audio>
-    <audio src="/mp3/break_sounds.mp3" data-sound="longBreak"></audio>
+    <audio src="https://firebasestorage.googleapis.com/v0/b/pomotto.appspot.com/o/Phrase03-1.mp3?alt=media&token=dbcaf4b4-1f40-4829-a4e5-9a16db304880" data-sound="pomodoro"></audio>
+    <audio src="https://firebasestorage.googleapis.com/v0/b/pomotto.appspot.com/o/Phrase03-1.mp3?alt=media&token=dbcaf4b4-1f40-4829-a4e5-9a16db304880" data-sound="shortBreak"></audio>
+    <audio src="https://firebasestorage.googleapis.com/v0/b/pomotto.appspot.com/o/Phrase03-1.mp3?alt=media&token=dbcaf4b4-1f40-4829-a4e5-9a16db304880" data-sound="longBreak"></audio>
   </div>
 
   <section id="task">
@@ -69,6 +69,9 @@
     </ul>
     <br>
     <h1>この下に完了タスクが表示されるようにしたいです</h1>
+    <ul class="task__list js-task__list-done">
+      <%= render @tasks %> <%# _task.html.erbを呼び出す %>
+    </ul>
   </section>
   <%= javascript_pack_tag 'main' %>
 </body>
