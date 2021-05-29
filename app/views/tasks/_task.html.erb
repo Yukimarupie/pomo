@@ -1,9 +1,17 @@
 <li class="tasks__list-task" id="task-<%= task.id %>">
-  <%= check_box :task, :done, {:checked => @task.done, class: "check_box"} %>
+  <%= check_box :task, :done, {:onchange => @task.done, class: "check_box"} %>
+      <%= check_box_tag 'task[done]', true, @task.done, {
+        onchange: '$(this).data("params", "user[private]=" + this.checked)',
+        data: {
+            method: :patch,
+            remote: true
+        }
+    } %>
+
   <%= task.name  %>
   <%= link_to task_path(task),
               method: :delete,
               data: { confirm: '削除しますか?', remote: true } do %>
     <i class="far fa-trash-alt"  aria-hidden="true"></i>
-  <% end  %>            
+  <% end  %>          
 </li>

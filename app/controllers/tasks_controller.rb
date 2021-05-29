@@ -10,10 +10,8 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     respond_to do |format|
       if @task.save!
-        # format.json { render :json => @task } #サーバー側の処理
         format.js #create.js.erbが呼び出される。 フロント側の処理。
       else
-        # format.json { render :new }
         format.js { render :errors }
       end
     end
@@ -27,6 +25,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update!(task_params)
+        
         format.json { render :json => @task } #サーバー側の処理
         format.js #create.js.erbが呼び出される。 フロント側の処理。
       else
