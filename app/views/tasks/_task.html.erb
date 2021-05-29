@@ -1,6 +1,5 @@
 <li class="tasks__list-task" id="task-<%= task.id %>">
   <%= check_box :task, :done, {:checked => @task.done, class: "check_box"} %>
-  
   <%= task.name  %>
   <%= link_to task_path(task),
               method: :delete,
