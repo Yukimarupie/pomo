@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:destroy, :edit, :update]
+  before_action :set_task, only: [:destroy, :edit, :update, :done]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.reverse
     @task = Task.new #remote: trueのために追加
   end
 
@@ -10,10 +10,10 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     respond_to do |format|
       if @task.save!
-        format.json { render :json => @task } #サーバー側の処理
+        # format.json { render :json => @task } #サーバー側の処理
         format.js #create.js.erbが呼び出される。 フロント側の処理。
       else
-        format.json { render :new }
+        # format.json { render :new }
         format.js { render :errors }
       end
     end
@@ -40,12 +40,18 @@ class TasksController < ApplicationController
     @task.destroy!
   end
 
-  def is_done; end
+  def done
+    @task.update(:done, true)
+  end
+
+  def done_list
+    @task.done.all
+  end
 
   private
 
   def task_params
-    params.require(:task).permit(:name)
+    params.require(:task).permit(:name, :done)
   end
 
   def set_task
