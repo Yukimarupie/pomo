@@ -1,6 +1,6 @@
 // タスクを追加する 
 // 解説：'<%= @task.name %>' だとただの文字列追加になってしまう為、_task.html.erbのフォームを呼び出して追加するために'<%= j(render @task) %>'と記載する
-document.querySelector('.js-task__list').insertAdjacentHTML('afterbegin', '<%= j(render @task) %>')
+document.querySelector('.js-task__list').insertAdjacentHTML('beforeend', '<%= j(render @task) %>')
 
 // フォームの文字を空にする
 document.getElementById('task_name').value = ''

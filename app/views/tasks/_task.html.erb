@@ -1,12 +1,9 @@
 <li class="tasks__list-task" id="task-<%= task.id %>">
-  <%= check_box :task, :done, {:onchange => @task.done, class: "check_box"} %>
-      <%= check_box_tag 'task[done]', true, @task.done, {
-        onchange: '$(this).data("params", "user[private]=" + this.checked)',
-        data: {
+  <%= link_to done_task_path(task),
             method: :patch,
-            remote: true
-        }
-    } %>
+            data: { confirm: '完了しましたか?', remote: true } do %>
+    <i class="far fa-trash-alt"  aria-hidden="true"></i>
+  <% end  %>
 
   <%= task.name  %>
   <%= link_to task_path(task),

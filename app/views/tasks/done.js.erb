@@ -1,0 +1,4 @@
+console.log('done.js.erbが呼び出されました');
+document.getElementById('task-<%= @task.id %>').outerHTML = ''
+document.querySelector('.js-task__list-done').insertAdjacentHTML('afterbegin', '<%= j(render @task) %>')
+

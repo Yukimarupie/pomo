@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks do
-    patch :done, on: :collection 
+    patch :done, on: :member 
     #collection: ルーティングにコレクション（/photos/searchのようにidを伴わないパス）を追加するときに使う https://bityl.co/7548
     #member: idが伴う時。
   end
