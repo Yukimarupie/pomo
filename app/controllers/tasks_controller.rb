@@ -2,7 +2,15 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:destroy, :edit, :update, :done]
 
   def index
-    @tasks = Task.all.reverse
+    # もしdone: false == @task.not_done.allにいれる done: trueなら@task.done.allにいれる
+    # Client.where(locked: true)
+    # @tasks = Task.all.reverse
+    #こっちにはdone: trueになったら完了タスクを出したい
+
+    @tasks_undone = Task.where(done: false)
+    #今日の日付より大きいもの
+    @tasks_done = Task.where(done: true).where('created_at >= ?', Time.current.beginning_of_day).order(id: "DESC")
+    # binding.pry
     @task = Task.new #remote: trueのために追加
   end
 
@@ -10,10 +18,8 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     respond_to do |format|
       if @task.save!
-        # format.json { render :json => @task } #サーバー側の処理
         format.js #create.js.erbが呼び出される。 フロント側の処理。
       else
-        # format.json { render :new }
         format.js { render :errors }
       end
     end
@@ -41,11 +47,9 @@ class TasksController < ApplicationController
   end
 
   def done
-    @task.update(:done, true)
-  end
-
-  def done_list
-    @task.done.all
+    # binding.pry
+    @task.update(done: true) #doneをtrueに。
+    # format.js { render :js => @task }
   end
 
   private
@@ -55,6 +59,7 @@ class TasksController < ApplicationController
   end
 
   def set_task
+    # binding.pry
     @task = Task.find(params[:id])
   end
 end

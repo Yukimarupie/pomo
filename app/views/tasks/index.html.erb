@@ -65,12 +65,12 @@
     <% end %>
     ここにタスク一覧が表示されます↓
     <ul class="task__list js-task__list">
-      <%= render @tasks %> <%# _task.html.erbを呼び出す %>
+      <%= render @tasks_undone %> <%# _task.html.erbを呼び出す %>
     </ul>
     <br>
     <h1>この下に完了タスクが表示されるようにしたいです</h1>
     <ul class="task__list js-task__list-done">
-      <%= render @tasks %> <%# _task.html.erbを呼び出す %>
+      <%= render @tasks_done %> <%# _task.html.erbを呼び出す %>
     </ul>
   </section>
   <%= javascript_pack_tag 'main' %>
