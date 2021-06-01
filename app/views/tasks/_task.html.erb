@@ -8,8 +8,7 @@
   <% else %>
     <i class="fas fa-circle"></i>
   <% end %>
-
-  <%= task.name  %>
+  <%= task.name %>
   <%= link_to task_path(task),
               method: :delete,
               data: { confirm: '削除しますか?', remote: true } do %>
