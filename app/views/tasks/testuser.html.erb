@@ -1,0 +1,75 @@
+
+<h1>testuser用画面</h1>
+
+
+
+  <script>
+  function insertTask() {
+    //formに入力された値を取ってくる
+    task = document.getElementById('task-title').value
+    // 
+    let table = document.getElementById('targetTable');
+    let newRow = table.insertRow();
+
+    let newCell = newRow.insertCell();
+    let newText = document.createTextNode(task);
+    newCell.appendChild(newText);
+
+    //配列で全ての物が保存されてしまうため、splitで分割
+    tasks = localStorage.getItem('tasks').split(',')
+    tasks.push(task)
+    //setItemでローカルストレージに保存 tasksキーをtasksに。
+    localStorage.setItem('tasks', tasks)
+    
+  }
+
+  function formatDate(dt) {
+    var y = dt.getFullYear();
+    var m = ('00' + (dt.getMonth()+1)).slice(-2);
+    var d = ('00' + dt.getDate()).slice(-2);
+    return (y + '-' + m + '-' + d);
+  }
+
+  function reload(){
+    tasks = localStorage.getItem('tasks').split(',')
+    
+    for (let i = 0; i < tasks.length; i++) {
+      let table = document.getElementById('targetTable');
+      let newRow = table.insertRow();
+
+      let newCell = newRow.insertCell();
+      let newText = document.createTextNode(tasks[i]);
+      newCell.appendChild(newText);
+    }
+  }
+  function initTask(){
+    let tasks = ['sample1', 'sample2']
+    let time = formatDate(new Date());
+    localStorage.setItem('tasks', tasks)
+    localStorage.setItem('time', time)
+
+    tasks = localStorage.getItem('tasks').split(',')
+    time_index = localStorage.getItem('time')
+    
+    for (let i = 0; i < tasks.length; i++) {
+      let table = document.getElementById('targetTable');
+      let newRow = table.insertRow();
+
+      let newCell = newRow.insertCell();
+      let newText = document.createTextNode(tasks[i]);
+      newCell.appendChild(newText);
+    }
+  }
+
+  function resetTask(){
+    localStorage.setItem('tasks', '')
+    location.href = '/'
+  }
+
+  now = formatDate(new Date());
+  time = localStorage.getItem('time');
+  if (now === localStorage.getItem('time')){
+    reload()
+  }else {
+    initTask()
+  }</script>

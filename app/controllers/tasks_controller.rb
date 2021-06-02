@@ -41,6 +41,7 @@ class TasksController < ApplicationController
     @task.destroy!
   end
 
+  def testuser; end
 
   private
 
