@@ -1,11 +1,14 @@
 <li class="tasks__list-task" id="task-<%= task.id %>">
-  <%= link_to done_task_path(task),
-            method: :patch,
-            data: { confirm: '完了しましたか?', remote: true } do %>
-    <i class="far fa-trash-alt"  aria-hidden="true"></i>
-  <% end  %>
-
-  <%= task.name  %>
+  <% if @task.done === false %>
+    <%= link_to done_task_path(task),
+              method: :patch,
+              data: { confirm: '完了しましたか?', remote: true } do %>
+      <i class="far fa-check-circle"></i>
+    <% end %>
+  <% else %>
+    <i class="fas fa-circle"></i>
+  <% end %>
+  <%= task.name %>
   <%= link_to task_path(task),
               method: :delete,
               data: { confirm: '削除しますか?', remote: true } do %>

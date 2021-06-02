@@ -1,4 +1,6 @@
 console.log('done.js.erbが呼び出されました');
+// チェックマークが押された時点で、ToDoリストの中から該当タスクを削除
 document.getElementById('task-<%= @task.id %>').outerHTML = ''
+// 完了タスクリストに追加
 document.querySelector('.js-task__list-done').insertAdjacentHTML('afterbegin', '<%= j(render @task) %>')
 
