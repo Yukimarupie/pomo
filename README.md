@@ -14,8 +14,10 @@ https://pomodnair.herokuapp.com/
 ### ターゲットペルソナ
 普段自宅でPCを使ってリモートワークをしている女性。<br>
 メインSNSはInstagramとPintarest。<br>
-PCで使うToDoアプリを一度DLしてみたが、面倒なので開かなくなってしまった。<br>
-日々もっと効率的に作業をこなしたいと思っている。<br>
+PCで使うToDoアプリを一度DLしてみたが、面倒なので開かなくなってしまったので、<br>
+ブラウザで完結するToDo管理アプリを探している。<br>
+日々もっと効率的に作業をこなしたいので、できればポモドーロタイマーがついていたら嬉しいと考えている。<br>
+
 
 ### 機能要件一覧
 https://docs.google.com/spreadsheets/d/1MWpFU1MRcXEDjHoPqI3LRbRgAVC1wrFdChSu7YZX3Eg/edit?usp=sharing
