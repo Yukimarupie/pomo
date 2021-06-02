@@ -11,7 +11,7 @@ https://pomodnair.herokuapp.com/
 https://docs.google.com/spreadsheets/d/1MWpFU1MRcXEDjHoPqI3LRbRgAVC1wrFdChSu7YZX3Eg/edit?usp=sharing
 
 ### 解決したい課題
-ポモドーロとToDoタスク管理ができて、かつWebブラウザで完結するサービスが少ない。
+ポモドーロとToDoタスク管理ができて、かつWebブラウザで完結するサービスが少ない。<br>
 またあってもデザイン性が低く、女性向けの物が少ない。
 
 ### ターゲットペルソナ
@@ -29,11 +29,21 @@ PCで使うToDoアプリを一度DLしてみたが、面倒なので開かなく
 - MYSQL8
 - Heroku
 - RSpec
+- LocalStrage(機能試用)
 - Firebase Storage(mp3ファイル管理)
 
 # ER図
 
 # インフラ構造
+
+# 気をつけたこと
+- UX
+Ajaxでページ遷移を極力少なくし、ユーザーのストレス緩和を狙った。
+
+- ローカルストレージによるお試し機能
+PFにはゲストログイン機能をつけるのが一般的だが、ボタンをわざわざ押させないといけない。
+ローカルストレージを使用し、アプリにアクセスしてすぐに機能が使えるようにした。(する予定)
+
 
 # デザインツール
 Figma
