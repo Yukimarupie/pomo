@@ -8,19 +8,19 @@
 またあってもデザイン性が低く、女性向けの物が少ない。
 
 ### ターゲットペルソナ
-普段自宅でPCを使ってリモートワークをしている女性。
-メインSNSはInstagramとPintarest。
-PCで使うToDoアプリを一度DLしてみたが、面倒なので開かなくなってしまった。
-日々もっと効率的に作業をこなしたいと思っている。
+普段自宅でPCを使ってリモートワークをしている女性。<br>
+メインSNSはInstagramとPintarest。<br>
+PCで使うToDoアプリを一度DLしてみたが、面倒なので開かなくなってしまった。<br>
+日々もっと効率的に作業をこなしたいと思っている。<br>
 
 ### 使用技術
 
-Ruby 3.0.1
-Rails 6.1.3
-MYSQL8
-Heroku
-RSpec
-Firebase Storage(mp3ファイル管理)
+- Ruby 3.0.1
+- Rails 6.1.3
+- MYSQL8
+- Heroku
+- RSpec
+- Firebase Storage(mp3ファイル管理)
 
 ### デザインツール
 Figma
