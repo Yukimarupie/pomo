@@ -1,24 +1,26 @@
-# README
+# Pomodnair(ポモドネア)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### サービス概要
+ポモドーロタイマーがついたデイリーToDoタスク管理アプリ
 
-Things you may want to cover:
+### 解決したい課題
+ポモドーロとToDoタスク管理ができて、かつWebブラウザで完結するサービスが少ない。
+またあってもデザイン性が低く、女性向けの物が少ない。
 
-* Ruby version
+### ターゲットペルソナ
+普段自宅でPCを使ってリモートワークをしている女性。
+メインSNSはInstagramとPintarest。
+PCで使うToDoアプリを一度DLしてみたが、面倒なので開かなくなってしまった。
+日々もっと効率的に作業をこなしたいと思っている。
 
-* System dependencies
+### 使用技術
 
-* Configuration
+Ruby 3.0.1
+Rails 6.1.3
+MYSQL8
+Heroku
+RSpec
+Firebase Storage(mp3ファイル管理)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### デザインツール
+Figma
