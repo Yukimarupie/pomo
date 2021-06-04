@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   def index
     @tasks_undone = Task.where(done: false)
     #今日の日付より大きいもの
-    @tasks_done = Task.where(done: true).where('created_at >= ?', Time.current.beginning_of_day).order(id: "DESC")
+    @tasks_done = Task.where(done: true).where('updated_at >= ?', Time.current.beginning_of_day).order(id: "DESC")
     @task = Task.new #remote: trueのために追加
   end
 
