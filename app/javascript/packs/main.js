@@ -1,7 +1,7 @@
 const timer = {
-  pomodoro: 0.2,
-  shortBreak: 0.1,
-  longBreak: 0.2,
+  pomodoro: 25,
+  shortBreak: 5,
+  longBreak: 15,
   longBreakInterval: 4,
   sessions: 0,
 };
@@ -62,10 +62,6 @@ function startTimer() {
   // if (timer.mode === 'pomodoro') timer.sessions++;
   if (timer.mode === 'pomodoro') {
     timer.sessions++;
-    // alert(timer.sessions);
-    // const sessionCounts = timer.sessions++;
-    // sessionCounts;
-    // alert(sessionCounts);
   }
 
 
@@ -191,5 +187,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  switchMode('pomodoro'); //デフォルトモードがポモドーロになる
+  switchMode('pomodoro'); //デフォルトモードをポモドーロに
 });
