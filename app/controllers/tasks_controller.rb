@@ -25,23 +25,9 @@ class TasksController < ApplicationController
     @task.update(done: true) #doneをtrueに。 done.js.erbは指定せずとも自動で呼び出される
   end
 
-  def update
-    # binding.pry
-    respond_to do |format|
-      if @task.update!(task_params)
-        # binding.pry
-        format.js #update.js.erbが呼び出される。 フロント側の処理。
-      else
-        format.js { render :errors }
-      end
-    end
-  end
-
   def destroy
     @task.destroy!
   end
-
-  def testuser; end
 
   private
 

@@ -61,7 +61,7 @@
   <section id="task">
     <%= form_with model: @task, class: 'js-forms', local: false do |f| %>
       <%= f.text_field :name, placeholder: 'Click & Add task' %>
-      <%= f.submit %>
+      <%= f.submit nil, class: 'submit_btn'%>
     <% end %>
     ここにタスク一覧が表示されます↓
     <ul class="task__list js-task__list">
